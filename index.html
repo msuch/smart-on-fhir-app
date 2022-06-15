@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>SMART on FHIR app tutorial</title>
+    <title>SMART on FHIR app testing</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -141,7 +141,7 @@
 
 <p>First, you&rsquo;ll want to fork this tutorial from <a href="https://github.com/cerner/smart-on-fhir-tutorial">smart-on-fhir-tutorial</a> to your GitHub account. The branch you are going to work on is gh-pages.</p>
 
-<p>The <code class="prettyprint">smart-on-fhir-tutorial/example-smart-app</code> folder contains the example SMART app which you&rsquo;ll be using throughout this tutorial. Let&rsquo;s take a look at some of the notable files contained within:</p>
+<p>The <code class="prettyprint">smart-on-fhir-tutorial/app</code> folder contains the example SMART app which you&rsquo;ll be using throughout this tutorial. Let&rsquo;s take a look at some of the notable files contained within:</p>
 
 <p><strong>fhir-client-[version].js</strong></p>
 
@@ -187,24 +187,24 @@ This tutorial is designed to have a minimal footprint so we made the decision to
     ...
 </code></pre></div>
 <blockquote>
-<p>Go to your GitHub account, select Repositories tab and select smart-on-fhir-tutorial repo. Select Branch button and switch to gh-pages branch if it is not already selected. Directly edit <code class="prettyprint">/example-smart-app/index.html</code> by clicking on the pencil icon.  Once done with the change, commit directly to gh-pages branch, this will ensure your changes are auto deployed by GitHub.</p>
+<p>Go to your GitHub account, select Repositories tab and select smart-on-fhir-tutorial repo. Select Branch button and switch to gh-pages branch if it is not already selected. Directly edit <code class="prettyprint">/app/index.html</code> by clicking on the pencil icon.  Once done with the change, commit directly to gh-pages branch, this will ensure your changes are auto deployed by GitHub.</p>
 
 <p>The SMART app will be available at:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/
+<div class="highlight"><pre class="highlight plaintext"><code>https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/
 </code></pre></div>
 <blockquote>
 <p>Health check</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/health
+<div class="highlight"><pre class="highlight plaintext"><code>https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/health
 </code></pre></div>
 <p>For the purposes of this tutorial we will be hosting our SMART app through <a href="https://help.github.com/articles/what-is-github-pages">GitHub Pages</a>. GitHub Pages is a convenient way to host static or client rendered web sites.</p>
 
 <p>Setting up GitHub pages is easy, so easy in fact that it&rsquo;s already done for you. GitHub pages works by hosting content from a gh-pages branch. Since you forked the tutorial, the gh-pages branch has already been created, however GitHub won&rsquo;t publish your site until you make a change to the gh-pages branch, so let&rsquo;s make a change. Modify the index.html page to include your GitHub user-name in the title, and commit directly to gh-pages branch.</p>
 
-<p>Use GitHub UI to directly edit <code class="prettyprint">index.html</code>. Simply switch the branch to gh-pages, navigate to <code class="prettyprint">/example-smart-app/index.html</code> and click the pencil icon. Commit your changes to deploy.</p>
+<p>Use GitHub UI to directly edit <code class="prettyprint">index.html</code>. Simply switch the branch to gh-pages, navigate to <code class="prettyprint">/app/index.html</code> and click the pencil icon. Commit your changes to deploy.</p>
 
-<p>Once the app has been redeployed go to <code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/health</code> to ensure your app is available.</p>
+<p>Once the app has been redeployed go to <code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/health</code> to ensure your app is available.</p>
 
 <aside class="notice">
 GitHub Pages sites have a limit of 10 builds per hour, so if your page isn&rsquo;t updating, this could be the reason.
@@ -226,11 +226,11 @@ GitHub Pages sites have a limit of 10 builds per hour, so if your page isn&rsquo
 </tr>
 <tr>
 <td>SMART Launch URI</td>
-<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/launch.html</code></td>
+<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/launch.html</code></td>
 </tr>
 <tr>
 <td>Redirect URI</td>
-<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/</code></td>
+<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/</code></td>
 </tr>
 <tr>
 <td>App Type</td>
@@ -699,7 +699,7 @@ Once these relevant files and HTML tags are included inside each view of the app
 <li>In the <strong>Provider(s)</strong> section, click the drop down button to open a list of providers. Select any provider to populate the Provider ID in the field.</li>
 <li>For the purpose of this tutorial we will leave the <strong>Advanced</strong> options as is.</li>
 <li>In the <strong>Launch</strong> section, use the following value but replace <code class="prettyprint">&lt;gh-username&gt;</code> with your GitHub username for <strong>App Launch URL</strong>:
-https://<code class="prettyprint">&lt;gh-username&gt;</code>.github.io/smart-on-fhir-tutorial/example-smart-app/launch-smart-sandbox.html</li>
+https://<code class="prettyprint">&lt;gh-username&gt;</code>.github.io/smart-on-fhir-tutorial/app/launch-smart-sandbox.html</li>
 <li>Note: Currently, the <a href="https://launch.smarthealthit.org">SMART App Launcher</a> does not check/validate the <code class="prettyprint">client_id</code> field. So, any value for <code class="prettyprint">client_id</code> is fine. If/when this changes, or when working with other authorization servers, please update the <code class="prettyprint">client_id</code> field in <code class="prettyprint">launch-smart-sandbox.html</code> file.</li>
 <li>Now launch the app by clicking on the green &lsquo;Launch App!&rsquo; button to see your app opened in the simulated EHR with the patient data.</li>
 </ul>
@@ -746,7 +746,7 @@ https://<code class="prettyprint">&lt;gh-username&gt;</code>.github.io/smart-on-
 </tr>
 <tr>
 <td>Redirect URI</td>
-<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/</code></td>
+<td><code class="prettyprint">https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/</code></td>
 </tr>
 <tr>
 <td>App Type</td>
@@ -810,7 +810,7 @@ https://<code class="prettyprint">&lt;gh-username&gt;</code>.github.io/smart-on-
 <blockquote>
 <p>Launch URL:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>  https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/example-smart-app/launch-patient.html?iss=https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
+<div class="highlight"><pre class="highlight plaintext"><code>  https://&lt;gh-username&gt;.github.io/smart-on-fhir-tutorial/app/launch-patient.html?iss=https://fhir-myrecord.cerner.com/dstu2/ec2458f2-1e24-41c8-b71b-0e701af7583d
 </code></pre></div>
 <p>Since this app is a standalone app, it does not need to be launched by the EHR or patient portal (code console).</p>
 
